@@ -3,6 +3,10 @@ pygame.init()       # initialize all of pygame's submodules
 screen = pygame.display.set_mode((400, 400))    # create a surface called 'screen' and give it a size of 400x400
 running = True      # used to control while loop
 
+"""Setup for working with text"""
+my_font = pygame.font.SysFont("Comic Sans MS", 48)                    # choose a font. can be a list of fonts. pygame will fall back on the default font if none of your fonts can be found
+text_surface = my_font.render("Hello World", True, (200, 20, 255))    # render your text as a surface
+
 while running:      # main loop of program. will repeat until the window is closed
     """Below this line is a for loop for handling the event queue.
     The event queue takes every event (user interaction) that happens in the pygame window and
@@ -15,6 +19,6 @@ while running:      # main loop of program. will repeat until the window is clos
     
     """It's probably worth noting that we're still in the main loop here, but have left the for loop  
     for the event queue. This will run on repeat, but won't repeat for each event."""
-    screen.fill((0,0,0))            # fill the display with black 
-    pygame.draw.circle(screen, (200, 40, 255), pygame.mouse.get_pos(), 20)      # draw a circle on the display, in purple, at the mouse location, with a radius of 2-
-    pygame.display.flip()           # update the display
+    screen.fill((0,0,0))                # fill the display with black to clear it
+    screen.blit(text_surface, (0, 0))   # display the text on the screen
+    pygame.display.flip()               # update the display
