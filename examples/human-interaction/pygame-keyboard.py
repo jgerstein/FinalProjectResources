@@ -2,7 +2,8 @@ import pygame       # import pygame module
 pygame.init()       # initialize all of pygame's submodules
 screen = pygame.display.set_mode((400, 400))    # create a surface called 'screen' and give it a size of 400x400
 running = True      # used to control while loop
-x = y = 0
+x = 0
+y = 0
 
 """Setup for working with text"""
 my_font = pygame.font.SysFont("Arial", 48)                            # choose a font. can be a list of fonts. pygame will fall back on the default font if none of your fonts can be found
